@@ -8,22 +8,47 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
-}
+body {
 
-header {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
+  place-items: center;
 }
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/rocket.svg);
-  background-size: contain;
+main {
+  display: flex;
+  place-items: center;
+  gap: 30px;
+}
+
+.img__container {
+  max-height: 80vh;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+    display: block;
+  }
+
+  .img__container,
+  img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    align-items: flex-start;
+  }
 }

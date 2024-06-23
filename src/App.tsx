@@ -2,15 +2,12 @@ import { Registration } from './components/Registration/Registration';
 
 export const App = () => {
   return (
-    <div className="container">
-      <header>
-        <div className="logo" />
-        <h1>REGISTRATION</h1>
-      </header>
-      <main>
-        <Registration />
-      </main>
-    </div>
+    <main>
+      <Registration />
+      <div className="img__container">
+        <img src="/img/hero-bg.jpg" alt="" />
+      </div>
+    </main>
   );
 };
 

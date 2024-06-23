@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import './registration.css';
+
 //----interface for the object named "user"
 interface FormData {
   username: string;
@@ -40,64 +42,42 @@ export const Registration: React.FC = () => {
 
   //--tsx
   return (
-    <div className="registration">
-      <form className="registration__form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          value={user.email}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="username"
-          placeholder="User Name"
-          value={user.username}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={user.password}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="password"
-          name="passwordConfirm"
-          placeholder="Confirm Password"
-          value={user.passwordConfirm}
-          onChange={handleChange}
-        />
-        <br />
-        <button className="registration__submit-btn">REGISTER</button>
-      </form>
-    </div>
+    <form className="registration__form" onSubmit={handleSubmit}>
+      <h2>REGISTRATION</h2>
+
+      <input
+        type="text"
+        name="email"
+        placeholder="Email"
+        value={user.email}
+        onChange={handleChange}
+      />
+
+      <input
+        type="text"
+        name="username"
+        placeholder="User Name"
+        value={user.username}
+        onChange={handleChange}
+      />
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={user.password}
+        onChange={handleChange}
+      />
+
+      <input
+        type="password"
+        name="passwordConfirm"
+        placeholder="Confirm Password"
+        value={user.passwordConfirm}
+        onChange={handleChange}
+      />
+
+      <button className="registration__submit-btn">REGISTER</button>
+    </form>
   );
 };
-
-//----NOTES
-
-//#1
-//--preliminary thoughts on handleChange
-// setUser({
-//   username: e.target.value, //ale value má být pro každé políčko jiná - využiju atribut name nakonec
-//   // email: e.target.value,
-//   // password: e.target.value,
-//   // passwordConfirm: e.target.value,
-// });
-
-//#2
-//--username autocomplete
-// //Budeme chtít, aby se ve formuláři automaticky vyplnilo políčko User Name, pokud je User Name prázdné a pokud uživatel zadá validní email.
-// // //Validní email poznáme tak, že obsahuje zavináč. Do User Name se pak vyplní část emailu před zavináčem.
-
-//#3
-//two-way data binding (tj. jinými slovy "Provažte obsah formuláře se stavem user.")
-
-//#4
-//html: the <button> element's default -type- is "submit" (MDN)
